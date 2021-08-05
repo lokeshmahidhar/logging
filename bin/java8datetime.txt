@@ -1,0 +1,36 @@
+With Java 8, a new Date-Time API is introduced to cover the following drawbacks of old date-time API.
+
+Not thread safe - java.util.Date is not thread safe, thus developers have to deal with concurrency issue while using date. The new date-time API is immutable and does not have setter methods.
+
+All the Date classes are mutable, so they are not thread safe. It’s one of the biggest problem with Java Date and Calendar classes.
+
+
+Poor design - Default Date starts from 1900, month starts from 1, and day starts from 0, so no uniformity. The old API had less direct methods for date operations. The new API provides numerous utility methods for such operations.
+
+
+Difficult time zone handling - Developers had to write a lot of code to deal with timezone issues. The new API has been developed keeping domain-specific design in mind.
+
+
+Java 8 introduces a new date-time API under the package java.time. Following are some of the important classes introduced in java.time package.
+
+Local - Simplified date-time API with no complexity of timezone handling.
+
+
+Zoned - Specialized date-time API to deal with various timezones.
+
+
+Local Date-Time API
+
+LocalDate/LocalTime and LocalDateTime classes simplify the development where timezones are not required. 
+--------------------------------------
+Java 8 Date Time API Packages
+
+Java 8 Date Time API consists of following packages.
+ 
+
+1.java.time Package: This is the base package of new Java Date Time API. All the major base classes are part of this package, such as LocalDate, LocalTime, LocalDateTime, Instant, Period, Duration etc. All of these classes are immutable and thread safe. Most of the times, these classes will be sufficient for handling common requirements.
+2.java.time.chrono Package: This package defines generic APIs for non ISO calendar systems. We can extend AbstractChronology class to create our own calendar system.
+3.java.time.format Package: This package contains classes used for formatting and parsing date time objects. Most of the times, we would not be directly using them because principle classes in java.time package provide formatting and parsing methods.
+4.java.time.temporal Package: This package contains temporal objects and we can use it for find out specific date or time related to date/time object. For example, we can use these to find out the first or last day of the month. You can identify these methods easily because they always have format “withXXX”.
+5.java.time.zone Package: This package contains classes for supporting different time zones and their rules.
+
